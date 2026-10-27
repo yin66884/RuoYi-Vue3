@@ -95,6 +95,20 @@ export const constantRoutes = [
 // 动态路由，基于用户权限动态去加载
 export const dynamicRoutes = [
   {
+    path: '/ai',
+    component: Layout,
+    hidden: true,
+    roles: ['admin'],
+    children: [
+      {
+        path: 'agent',
+        component: () => import('@/views/ai/agent/index.vue'),
+        name: 'TicketAgent',
+        meta: { title: '工单智能助手', noCache: true }
+      }
+    ]
+  },
+  {
     path: '/system/user-auth',
     component: Layout,
     hidden: true,

@@ -9,6 +9,9 @@
         新增工单
       </el-button>
       <el-button @click="getList">刷新列表</el-button>
+      <router-link v-hasRole="['admin']" to="/ai/agent" style="margin-left: 12px">
+        <el-button type="success" plain>工单智能助手</el-button>
+      </router-link>
     </div>
 
     <!-- 工单列表 -->
